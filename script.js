@@ -68,7 +68,7 @@ window.addEventListener("scroll", () => {
         diamond.style.zIndex = "999";
         diamond.style.width = "20%";
     }
-    else if (scrollY > 3500) {
+    else if (scrollY > 3300) {
         diamond.style.top= "581%";
         diamond.style.right= "50%";
         diamond.style.transform = "translate(50%, -50%) rotate(90deg)";
