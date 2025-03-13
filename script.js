@@ -69,8 +69,8 @@ window.addEventListener("scroll", () => {
         diamond.style.width = "20%";
     }
     else if (scrollY > 3300) {
-        diamond.style.top= "581%";
-        diamond.style.right= "50%";
+        diamond.style.top = "581%";
+        diamond.style.right = "50%";
         diamond.style.transform = "translate(50%, -50%) rotate(90deg)";
         diamond.style.opacity = "100%";
         diamond.style.zIndex = "999";
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // blogs
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const elem = document.querySelector('.gallery-container');
     const flkty = new Flickity(elem, {
         cellAlign: 'left',
@@ -231,15 +231,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const leftArrow = document.querySelector('.arrow-left');
     const rightArrow = document.querySelector('.arrow-right');
 
-    leftArrow.addEventListener('click', function() {
+    leftArrow.addEventListener('click', function () {
         flkty.previous(false);
     });
 
-    rightArrow.addEventListener('click', function() {
+    rightArrow.addEventListener('click', function () {
         flkty.next(false);
     });
 
     // flkty.on('settle', function() {
     //     flkty.resize();
     // });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchIcon = document.querySelector(".search-icon");
+    const searchBox = document.querySelector(".search-box");
+    const navLinks = document.querySelector(".navlinks");
+
+    searchIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("search-active");
+    });
+
+    // Optional: Close search box if clicked outside
+    document.addEventListener("click", (event) => {
+        if (!searchIcon.contains(event.target) && !searchBox.contains(event.target)) {
+            navLinks.classList.remove("search-active");
+        }
+    });
 });
